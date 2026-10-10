@@ -1,0 +1,80 @@
+import type { LibraryExercise, SportGoal, Training } from '../types';
+
+export const seedLibrary: LibraryExercise[] = [
+  { id: 'ex-1', name: 'Przysiady', category: 'Nogi', defaultDifficulty: 7, usuallyUsesLoad: true, favorite: true, tags: ['siła nóg', 'moc'] },
+  { id: 'ex-2', name: 'Wykroki', category: 'Nogi', defaultDifficulty: 6, usuallyUsesLoad: true, favorite: true, tags: ['stabilizacja', 'siła nóg'] },
+  { id: 'ex-3', name: 'Pompki', category: 'Klatka', defaultDifficulty: 6, usuallyUsesLoad: false, favorite: true, tags: ['moc', 'klatka'] },
+  { id: 'ex-4', name: 'Podciąganie', category: 'Plecy', defaultDifficulty: 8, usuallyUsesLoad: false, favorite: true, tags: ['plecy', 'moc'] },
+  { id: 'ex-5', name: 'Wyciskanie sztangi', category: 'Klatka', defaultDifficulty: 8, usuallyUsesLoad: true, favorite: true, tags: ['siła', 'moc'] },
+  { id: 'ex-6', name: 'Skoki dosiężne', category: 'Cardio', defaultDifficulty: 6, usuallyUsesLoad: false, favorite: true, tags: ['wyskok', 'szybkość'] },
+  { id: 'ex-7', name: 'Brzuszki', category: 'Brzuch', defaultDifficulty: 6, usuallyUsesLoad: false, favorite: true, tags: ['core', 'siła'] },
+  { id: 'ex-8', name: 'Ćwiczenia mobilności', category: 'Mobilność', defaultDifficulty: 3, usuallyUsesLoad: false, favorite: false, tags: ['mobilność'] }
+];
+
+export const seedGoalProfiles: SportGoal[] = [
+  {
+    id: 'sport-1',
+    name: 'Cristiano Ronaldo',
+    discipline: 'Piłka nożna',
+    description: 'Dynamika, szybkość i siła eksplozywna w warunkach gry.',
+    areas: ['szybkość', 'wyskok', 'moc'],
+    progression: 42,
+    lastUpdated: new Date().toISOString(),
+    level: 'Rozwijający się',
+    trainingsSupporting: 5,
+    target: 80,
+    current: 42,
+    status: 'active'
+  },
+  {
+    id: 'sport-2',
+    name: 'Kylian Mbappé',
+    discipline: 'Piłka nożna',
+    description: 'Przyspieszenie, szybkość, moc i zmienność motoryczna.',
+    areas: ['przyspieszenie', 'szybkość', 'moc'],
+    progression: 38,
+    lastUpdated: new Date().toISOString(),
+    level: 'Fundamenty',
+    trainingsSupporting: 4,
+    target: 82,
+    current: 38,
+    status: 'active'
+  },
+  {
+    id: 'sport-3',
+    name: 'Giannis Antetokounmpo',
+    discipline: 'Koszykówka',
+    description: 'Moc nóg, siła całego ciała i odporność na presję.',
+    areas: ['siła całego ciała', 'moc', 'wytrzymałość'],
+    progression: 50,
+    lastUpdated: new Date().toISOString(),
+    level: 'Rozwijający się',
+    trainingsSupporting: 6,
+    target: 85,
+    current: 50,
+    status: 'active'
+  }
+];
+
+export const seedTrainings: Training[] = [
+  {
+    id: 'tr-1',
+    name: 'Klatka + triceps',
+    date: new Date(Date.now() - 86400000).toISOString().slice(0, 10),
+    notes: 'Dobry napływ energii. Skoncentrowałem się na kontroli ruchu.',
+    exercises: [
+      { id: 'e-1', name: 'Wyciskanie sztangi', category: 'Klatka', difficulty: 8, series: [{ id: 's-1', reps: 8, weight: 80 }, { id: 's-2', reps: 8, weight: 80 }, { id: 's-3', reps: 6, weight: 90 }], load: 80, loadType: 'barbell', rpe: 8, bodyweight: false, notes: 'Kontrola tempa' },
+      { id: 'e-2', name: 'Pompki', category: 'Klatka', difficulty: 6, series: [{ id: 's-4', reps: 12 }, { id: 's-5', reps: 10 }, { id: 's-6', reps: 8 }], load: 0, loadType: 'bodyweight', rpe: 7, bodyweight: true }
+    ]
+  },
+  {
+    id: 'tr-2',
+    name: 'Nogi + core',
+    date: new Date(Date.now() - 172800000).toISOString().slice(0, 10),
+    notes: 'Wysoki fokus na równowagę i pracę przez pełny zakres.',
+    exercises: [
+      { id: 'e-3', name: 'Przysiady', category: 'Nogi', difficulty: 7, series: [{ id: 's-7', reps: 8, weight: 100 }, { id: 's-8', reps: 8, weight: 100 }, { id: 's-9', reps: 6, weight: 110 }], load: 100, loadType: 'barbell', rpe: 8, bodyweight: false },
+      { id: 'e-4', name: 'Brzuszki', category: 'Brzuch', difficulty: 6, series: [{ id: 's-10', reps: 15 }, { id: 's-11', reps: 12 }, { id: 's-12', reps: 10 }], load: 0, loadType: 'bodyweight', rpe: 7, bodyweight: true }
+    ]
+  }
+];
